@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Portal</title>
+        <link rel="shortcut icon" href="./img/title.png">
+
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@800&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                background-color: #000000;
+                color: #FFFFFF;
+            }
+        </style>
+        
+        <style>
+            #title {
+                text-align: center;
+                margin-top: 40px;
+                color: #ffffff;
+                font-size: 100px;
+                font-family: "Stick No Bills", sans-serif;
+                width: 100%;
+            }
+            
+            #titleImage {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            #button {
+                text-align: center;
+                margin-top: 40px;
+                width: 100%;
+            }
+
+            .music {
+                background-color: rgb(92, 181, 241);
+                border: none;
+                color: black;
+                font-family: "Stick No Bills", sans-serif;
+                font-size: 20px;
+                width: 10%;
+                text-align: center;
+                text-decoration: none;
+                margin-left: 16px;
+                margin-right: 16px;
+                cursor: pointer;
+            }
+            .music:active {
+                background-color: #1961b4;
+                transform: translateY(4px);
+            }
+            .music:hover {background-color: #1961b4; color:white}
+
+            .button {
+                background-color: rgb(122, 241, 92);
+                border: none;
+                color: black;
+                font-family: "Stick No Bills", sans-serif;
+                font-size: 40px;
+                width: 40%;
+                text-align: center;
+                text-decoration: none;
+                margin-left: 16px;
+                margin-right: 16px;
+                cursor: pointer;
+            }
+
+            .button:active {
+                background-color: #3e8e41;
+                transform: translateY(4px);
+            }
+            .button:hover {background-color: red; color:white}
+
+        </style>
+    </head>
+	<body>
+        <br/> 
+        <div id = "title"> <span>PORTAL</span> </div>
+        <div id = "titleImage"> <img src="./img/title.png" width = "300px" height = "300px"> </div>
+        <div id = "button">
+            <input id = "1" type = "button" value= "GAME START" class = "button"></button><br><br>
+            <input id = "2" type = "button" value = "How to Play" class = "button"></button><br><br>
+            <input id = "3" type= "button" value="EXIT" class = "button"></button>
+            <p style="color: black; font-size:20px;" id="MUSICMSG">
+                AutoPlay is blocked. Please allow AutoPlay in your preferences for smooth game progress.
+            </p>
+            <input id = "4" type= "button" value="MUSIC ON/OFF" class = "music"></button>
+        </div>
+        <audio loop id="bgm">
+            <source src="./audio/background2.mp3">
+        </audio>
+    </body>
+    <script>
+    // check audio is playing
+    var playing = true;
+    // click sound setting
+    const clickSound = new Audio();
+    clickSound.src = "./audio/MP_Button.mp3";
+    clickSound.volume = 0.3;
+    // bgm setting and play
+    const bgm = document.getElementById("bgm");
+    bgm.volume = 0.1;
+    bgm.play();
+    // exception
+    if(bgm.paused){
+        document.getElementById("MUSICMSG").style.color="red";
+        playing = false;
+    }
+
+    // game start function
+    var game_start = function(){
+        window.open('./html/game.html','_self');
+    };
+
+    // how to play function
+    var how_to_play = function(){
+        window.open('./html/howtoplay.html','_self');
+    };
+
+    // exit function
+    var exit = function(){
+        window.close();
+    };
+
+    // get button id
+    const btnStart = document.getElementById("1");
+    const btnHowToPlay = document.getElementById("2");
+    const btnExit = document.getElementById("3");
+    const btnMusic = document.getElementById("4");
+
+    // start button
+    btnStart.onclick = function () {
+        clickSound.play();
+        clickSound.addEventListener("ended", game_start);
+    }
+
+    // how to play button
+    btnHowToPlay.onclick = function () {
+        clickSound.play();
+        clickSound.addEventListener("ended", how_to_play);
+    }
+
+    // exit button
+    btnExit.onclick = function () {
+        clickSound.play();
+        clickSound.addEventListener("ended", exit);
+    }
+
+    // music button
+    btnMusic.onclick = function () {
+        if(!playing) {
+            bgm.play();
+            playing = true;
+        }
+        else {
+            bgm.pause();
+            bgm.currentTime = 0;
+            playing = false;
+        }
+    }
+    </script>
+</html>

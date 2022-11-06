@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>How to Play</title>
+        <link rel="shortcut icon" href="../img/title.png">
+
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@800&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                background-color: #000000;
+            }
+        </style>
+        
+    
+        <style>
+            .rightButton {
+                width: 100%;
+                float: right;
+                background: #000000;
+                display:flex;
+                justify-content: center;
+            }
+
+            .button {
+                background-color: rgb(122, 241, 92);
+                border: none;
+                color: black;
+                font-family: "Stick No Bills", sans-serif;
+                font-size: 30px;
+                padding: 0px 50px;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .button:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            .button:hover {background-color: red; color: white;}
+
+            #title {
+                text-align: center;
+                margin-top: 40px;
+                color: #ffffff;
+                font-size: 100px;
+                font-family: "Stick No Bills", sans-serif;
+                width: 100%;
+            }
+            #itemimage{
+                width:60%;
+            }
+            #portalimage {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 80%;
+            }
+            #exitimage {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            #ourportalimage {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 80%;
+            }
+
+            table {
+                width: 100%;
+                height: 400px;
+                text-align: "center";
+                margin-top: 20px;
+                display: inline;
+            }
+
+            #th {
+                color: #ffd400;
+                font-size: 3em;
+            }
+
+            th {
+                border: 2px solid #000000;
+                background-color: #000000;
+            }
+
+            td {
+                text-align: "left";
+                padding: 10px 10px;
+                font-size: 1.5em;
+                font-family: "Stick No Bills", sans-serif;
+            }
+
+            th, tr {
+                color: #ffffff;
+            }
+
+        </style>
+    </head>
+
+	<body>
+        <div id = "title"> <span>How to play</span> </div>
+        <div style = "width: 100%; margin-top: 50px;">
+            <div style = "width: 100%; float:left; text-align: center; margin-bottom: 10px;">
+                <table width="100%">
+                    <tr>
+                        <td><img id = "portalimage" src = "../img/portal.jpeg" width = "100" height = "100"></td>
+                        <td align=left style = "font-family: 'Stick No Bills', sans-serif;">The game is motivated by the Portal.<br><br>You can control the character with W, A, S, D keyboard keys.</td>
+                    </tr>
+                    <tr>
+                        <td><img id = "itemimage" src = "../img/item.png" width = "100" height = "100"></td>
+                        <td align=left>This is item.<br><br>You should collect 7 items for 1 stage.<br><br>And 5 items for 2 stage.</td>
+                    </tr>
+                    <tr>
+                        <td><img id = "ourportalimage" src = "../img/ourportal.png" width = "100" height = "100"></td>
+                        <td align=left>This is portal.<br><br>Create blue portal with left click and yellow portal with right click<br><br>Portals are connected.<br><br>A square will appear on the wall where you can install</td>
+                    </tr>
+                    <tr>
+                        <td><img id = "exitimage" src = "../img/exit.png" width = "100" height = "100"></td>
+                        <td align=left>You can see this exit sign above way out.<br><br>Escape using the portal</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style = "float:center; margin-top:50px;">
+            <div class = "rightButton">
+                <input id = "1" type = "button" value = "Start" class = "button" style = "font-size: 2em" ></button>
+            </div>
+        </div>
+    </body>
+    <script>
+    // make Audio instance
+    const clickSound = new Audio();
+    clickSound.src = "../audio/MP_Button.mp3";
+    clickSound.volume = 0.3;
+
+    var game_start = function(){
+        // location.href='game.html'
+        window.open('../html/game.html','_self');
+    };
+
+    // get button id
+    const btnBack = document.getElementById("1");
+    // const btnStart = document.getElementById("2");
+
+    // start button
+    btnBack.onclick = function () {
+        clickSound.play();
+        clickSound.addEventListener("ended", game_start);
+    };
+</script>
+</html>
+<p>2022 Computer Graphics. Made by Kim gi yeol, Kim han moe, Lee so hyun, Cho hyun sik</p>

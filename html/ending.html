@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Portal</title>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+        <style>
+            header {
+                margin: 5rem;
+                margin-right:0;
+                margin-left:0;
+              }
+            body {
+                font-size: 2rem;
+                background-color: #060606;
+                color: #c7c6ac;
+                font-family: 'Rajdhani', sans-serif;
+                font-variant-ligatures: common-ligatures;
+                display: flex;
+                justify-content: center;
+                font-synthesis: none;
+              }
+              
+              h1 {
+                font-family: "Stick No Bills", sans-serif;
+                text-align: center;
+                font-weight: 400;
+                font-variant-caps: all-small-caps;
+                font-size: 6rem;
+                color:#f89b00;
+              }
+              
+              h2 {
+                text-align: center;
+                font-weight: 400;
+                font-size: 2.5rem;
+                margin-top: 5rem;
+                margin-bottom: .5rem;
+                margin-left:3rem;
+                font-family: "Stick No Bills", sans-serif;
+                font-variant-caps: all-small-caps;
+                margin-right:1rem;
+                color:#f89b00
+              }
+    
+              p {
+                
+                font-size: 1.6rem;
+                text-align: center;
+              }
+                  
+              footer {
+                font-family: "Stick No Bills", sans-serif;
+                margin: 3rem;
+                color:#f89b00
+              }
+              dd{
+                font-size: 5px;
+              }
+              
+
+
+              #button {
+                text-align: center;
+                margin-top: 40px;
+
+              }
+            .button {
+                background-color: rgb(122, 241, 92);
+                border: none;
+                color: black;
+                font-family: "Stick No Bills", sans-serif;
+                font-size: 40px;
+                padding: 20px 45%;
+                text-align: center;
+                text-decoration: none;
+                margin-left: 16px;
+                margin-right: 16px;
+                cursor: pointer;
+            }
+            .button:active {
+                background-color: #3e8e41;
+                transform: translateY(4px);
+            }
+            .button:hover {background-color: red; color:white}
+        </style>
+    </head>
+    <body>
+      <audio loop id="bgm">
+        <source src="../audio/portalending.mp3">
+    </audio>
+  <header>
+    <h1>PORTAL</h1>
+
+  </header>
+  
+  <h2>Developers</h2>
+  <dl class="credits__single">
+    <br><br><br>
+    <dt>KiYeol_Kim</dt>
+    <dt>HanMoe_Kim</dt>
+    <dt>HyunSik_Cho</dt>
+    <dt>SoHyun_Lee</dt>
+  </dl>
+
+  <h2>Sources</h2>
+  <dl class="credits__double">
+    <br><br>
+    <br>
+    <dt>Ending background</dt>
+    <dd>'Still Alive' by Jonathan Coulton: http://www.jonathancoulton.com
+      and sung by Ellen McLain (GLaDOS, TF2 Announcer, HL2 Overwatch Administrator)</dd>
+    <dt>game background</dt>
+    <dd>George Farmstand</dd>
+    <dt>main background</dt>
+    <dd>Ed “Singin’ Ed” Butters</dd>
+    <dt>The Corn Bucket Gang</dt>
+    <dd>Steve Sugarbean</dd>
+    <dd>Kelly Kelen</dd>
+    <dd>Carl Whereist</dd>
+    <dd>Tom Guyman</dd>
+    <dt>Random Dude</dt>
+    <dd>Scott Oilier</dd>
+    <dt>Awful Co&#8209;Worker</dt>
+    <dd>Jeff MacAfloat</dd>
+    <dt>@replier</dt>
+    <dd>Manny Splain</dd>
+  </dl>
+  
+  <footer>
+    <h3>Thank you for playing!</h3>
+    <input type = "button" value= "Restart" class = "button" onClick="location.href='../index.html'"></button>
+    <p id="itemCounter"></p>
+  </footer>
+</section>
+<script>
+  // bgm setting and play
+  const bgmInGame = document.getElementById("bgm");
+  bgmInGame.volume = 0.1;
+  bgmInGame.play();
+  if(bgmInGame.paused){
+    document.getElementById("itemCounter").style.color="red";
+    document.getElementById("itemCounter").innerText="AutoPlay is blocked. Please allow AutoPlay in your preferences for smooth game progress.";
+    document.getElementById("itemCounter").value = -1;
+}
+</script>
+
+</body>
+</html>

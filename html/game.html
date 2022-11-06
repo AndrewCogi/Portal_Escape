@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Portal</title>
+    </head>
+<script type="text/javascript" src="./js/three.min.js"></script>
+<script type="text/javascript" src="./js/hello_portal.js"></script>
+<script type="text/javascript" src="./js/PointerLockControls.js"></script>
+<script type="text/javascript" src="./js/MTLLoader.js"></script>
+<script type="text/javascript" src="./js/OBJLoader.js"></script>
+<script type="text/javascript" src="./js/GLTFLoader.js"></script>
+<script src="./js/cannon.min.js"></script>
+<body style="background-color: black;">
+
+<div>
+    <p id="itemCounter" style="
+        font-size:20px; 
+        text-align: center;
+        margin:0px;
+        background-color: black;
+        color:honeydew;
+        "></p>
+</div>
+<div id="finish_condition"></div>
+<div> <canvas id="gl-canvas">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas> </div>
+    <audio loop id="bgm">
+        <source src="../audio/background6.mp3">
+    </audio>
+</body>
+<script>
+    // bgm setting and play
+    const bgmInGame = document.getElementById("bgm");
+    bgmInGame.volume = 0.1;
+    bgmInGame.play();
+    // exception
+    if(bgmInGame.paused){
+        document.getElementById("itemCounter").style.color="red";
+        document.getElementById("itemCounter").innerText="AutoPlay is blocked. Please allow AutoPlay in your preferences for smooth game progress.";
+        document.getElementById("itemCounter").value = -1;
+    }
+</script>
+</html>
